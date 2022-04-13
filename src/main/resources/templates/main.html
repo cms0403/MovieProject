@@ -3,8 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<style>
+.slideBanner{
+	position: relative;
+	overflow: hidden;
+	height:300px;
+}
+.slideBanner .slideList{
+	list-style-type: none;
+	position: absolute;
+ 	top: 0;
+ 	left: 300px;
+ 	height: 300px;
+ 	text-align: center;
+ 	font-size: 30px;
+ 	line-height: 300px;
+}
+.buyRank{
+	padding-left:0px;
+	height:250px;
+}
+.buyRank li{
+	list-style-type: none;
+	float: left;
+	margin-right: 10px
+}
+.rentRank{
+	padding-left:0px;
+	height:250px;
+}
+.rentRank li{
+	list-style-type: none;
+	float: left;
+	margin-right: 10px
+}
+.prev{
+}
+.next{
+}
+</style>
+
 </head>
 <body>
-
+	<h2>promotion</h2>
+	<div class="slideBanner">
+		<ul class="slideList">
+			<li>
+				<a href="#">
+					<img src="/img/1.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="/img/2.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<img src="/img/3.jpg">
+				</a>
+			</li>
+		</ul>
+		
+		<a class="prev" onclick="prevSlide()" value="이전"></a>
+		<a class="next" onclick="nextSlide()" value="다음"></a>
+			
+	</div>
+	
+	<div class="rank">
+		<h2>구매순위</h2>
+		<ul class="buyRank">
+			<li>
+				<a href="#">
+					<img src="/img/1.jpg" width="200px" height="200px"><br>
+				</a>
+				1위
+				<a href="#">영화이름</a>
+				<br>
+				★★★★★ 10.0
+			</li>
+			<li>
+				<a href="#">
+					<img src="/img/2.jpg" width="200px" height="200px"><br>
+				</a>
+				2위 영화<br>
+				★★★★★ 10.0
+			</li>
+			<li>
+				<a href="#">
+					<img src="/img/3.jpg" width="200px" height="200px"><br>
+				</a>
+				3위 영화<br>
+				★★★★★ 10.0
+			</li>
+		</ul>
+		<h2>대여순위</h2>
+		<ul class="rentRank">
+			<li>
+				<a href="#">
+					<img src="/img/1.jpg" width="200px" height="200px"><br>
+				</a>
+				1위
+				<a href="#">영화이름</a>
+				<br>
+				★★★★★ 10.0
+			</li>
+			<li>
+				<a href="#">
+					<img src="/img/2.jpg" width="200px" height="200px"><br>
+				</a>
+				2위 영화<br>
+				★★★★★ 10.0
+			</li>
+			<li>
+				<a href="#">
+					<img src="/img/3.jpg" width="200px" height="200px"><br>
+				</a>
+				3위 영화<br>
+				★★★★★ 10.0
+			</li>
+		</ul>
+	</div>
 </body>
 </html>
