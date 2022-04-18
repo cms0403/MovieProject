@@ -1,10 +1,267 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+            * {font-family: 'Noto Sans KR', sans-serif; text-decoration: none;}
+        .outbox {
+            margin: 0 auto;
+            width: 1130px;
+            height: auto;
+            /* border: 1px solid black; */
+        }
+        .videobox {
+            width: 1130px;
+            height: 636px;
+            /* border: 1px solid black; */
+            margin-bottom: 15px;
+        }
+        .summarybox {
+            width: 100%;
+            height: 120px;
+            /* border: 1px solid black; */
+            float: left;
+        }
+        .summary {
+            padding-top: 0px;
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            /* border: 1px solid black; */
+            float: left;
+        }
+        .summary-top, .summary-bottom {
+            width: 100%;
+            height: 55px;
+            box-sizing: border-box;
+            /* border: 1px solid black; */
+            /* padding-top: 5px; */
+        }
+        
+        .summary-bottom{font-size:small ;font-weight: 100; display: flex;}
+        .age {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: rgb(77, 201, 250);
+            color: white;
+            float: left;
+            font-size: 12px;
+            font-style: bold;
+            text-align: center;
+            line-height: 26px;
+            margin-left: 0;
+            margin-top: 5px;
+            margin-right: 5px;
+            /* padding-top: 5px; */
+        }
+        .title {
+            font-size: 26px;
+            font-weight: 400;
+            margin: 0;
+            
+        }
+        .credit {
+            padding-top: 5px;
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            /* border: 1px solid black; */
+            float: right;
+        }
+        .buy {
+            width: 150px;
+            height: 100%;
+            float: right;
+            /* border: 1px solid black; */
+        }
+        .buy button, .rent button {border: 0; outline: 0;}
+        .buy button {
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            color: white;
+            border-radius: 4px 4px;
+        }
+        .rent {
+            margin-right: 5px;
+            width: 150px;
+            height: 100%;
+            float: right;
+            /* border: 1px solid black; */
+        }
+        .rent button{
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            color: white;
+            border-radius: 4px 4px;
+        }
+        .detailbox {
+            float: left;
+            margin: 0;
+            width: 100%;
+            height: auto;
+            /* border: 1px solid black; */
+        }
+        .detailtitle { margin: 0 ;font-size: 20px; font-weight: 400;}
+        .detailcontents {
+            margin-top: 5px; 
+            white-space: pre-line;
+            width: 99%;
+            float: right;
+        }
+        .commentbox{
+            float: left;
+            width: 100%;
+            height: 700px;
+            box-sizing: border-box;
+            /* border: 1px solid black; */
+        }
+        .commenttitle {
+            float: left;
+            font-size: 20px;
+            font-weight: 400;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            width: 15%;
+        }
+        textarea {
+            width: 100%;
+            float: left;
+            resize: none;
+            margin-bottom: 5px;
+        }
+        .commentwrite {
+            float: left;
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .commentwrite button {
+            display: block;
+            width: 150px;
+            height: 50px;
+            float: right;
+            margin: 0;
+            right: 0;
+            border: 0;
+            outline: 0;
+            background-color: black;
+            color: white;
+            border-radius: 4px 4px;
+        }
+        .ratingtitle {margin: 0 ;font-size: 20px; font-weight: 400;}
+        
+        #myform fieldset{
+            display: inline-block; /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+            direction: rtl; /* 이모지 순서 반전 */
+            border: 0; /* 필드셋 테두리 제거 */
+            padding-left: 0;
+        }
+        #myform input[type=radio]{
+            display: none; /* 라디오박스 감춤 */
+        }
+        #myform label{
+            font-size: 15px; /* 이모지 크기 */
+            color: transparent; /* 기존 이모지 컬러 제거 */
+            text-shadow: 0 0 0 #d1d1d1; /* 새 이모지 색상 부여 */
+        }
+        #myform label:hover{
+            text-shadow: 0 0 0 #a00; /* 마우스 호버 */
+        }
+        #myform label:hover ~ label{
+            text-shadow: 0 0 0 #a00; /* 마우스 호버 뒤에오는 이모지들 */
+        }
+        #myform input[type=radio]:checked ~ label{
+            text-shadow: 0 0 0 #a00; /* 마우스 클릭 체크 */
+        }
+    </style>
 </head>
 <body>
+    <div class="outbox">
+        <div class="videobox">
+            <iframe width="1130" height="636" src="https://www.youtube.com/embed/s6UPaXuEwi4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="summarybox">
+            <div class="summary">
+                <div class="summary-top">
+                    <p class="age">12</p>
+                    <p class="title">이상한 나라의 수학자</p>
+                    
+                </div>
+                <div class="summary-bottom">
+                    <div class="year">2022 &nbsp; | &nbsp; </div>
+                    <div class="genre">드라마 &nbsp; | &nbsp; </div>
+                    <div class="country">한국 &nbsp; | &nbsp; </div>
+                    <div class="runningtime"> 117분 &nbsp; | &nbsp; </div>
+                    <div class="director"><strong>감독</strong> 박동훈 &nbsp; | &nbsp; </div>
+                    <div class="actor"><strong>주연</strong> 최민식, 김동휘 &nbsp; | &nbsp;</div>
+                    <div class="rate"><strong>7.9</strong> &nbsp;</div>
+                    
+                </div>
+            </div>
+            <div class="credit">
+                <div class="buy">
+                    <button onclick="">구매</button>
+                </div>
+                <div class="rent">
+                    <button onclick="">대여</button>
 
+                </div>
+            </div>
+
+        </div>
+        <div class="detailbox">
+            <p class="detailtitle">줄거리</p>
+            <p class="detailcontents">“정답보다 중요한 건 답을 찾는 과정이야”
+                학문의 자유를 갈망하며 탈북한 천재 수학자 '이학성’(최민식).
+                 그는 자신의 신분과 사연을 숨긴 채
+                 상위 1%의 영재들이 모인 자사고의 경비원으로 살아간다.
+                 
+                 차갑고 무뚝뚝한 표정으로 학생들의 기피 대상 1호인 ‘이학성’은
+                 어느 날 자신의 정체를 알게 된 뒤 수학을 가르쳐 달라 조르는
+                 수학을 포기한 고등학생 ‘한지우’(김동휘)를 만난다.
+                 
+                 정답만을 찾는 세상에서 방황하던 ‘한지우’에게
+                 올바른 풀이 과정을 찾아나가는 법을 가르치며
+                 ‘이학성’ 역시 뜻하지 않은 삶의 전환점을 맞게 된다.
+            </p>
+
+        </div>
+        <div class="ratingbox">
+            <div class="ratingtitle">
+                별점 등록
+            </div>
+            <div class="rating">
+                <form name="myform" id="myform" method="post" action="./save">
+                    <fieldset>
+                        <input type="radio" name="rating" value="5" id="rate1"><label for="rate1">⭐</label>
+                        <input type="radio" name="rating" value="4" id="rate2"><label for="rate2">⭐</label>
+                        <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">⭐</label>
+                        <input type="radio" name="rating" value="2" id="rate4"><label for="rate4">⭐</label>
+                        <input type="radio" name="rating" value="1" id="rate5"><label for="rate5">⭐</label>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="commentwrite">
+            <p class="commenttitle">리뷰 등록</p>
+            <form action="#" method="post">
+                <textarea rows="4" placeholder="리뷰를 입력해주세요."></textarea><br>
+                <button type="submit">리뷰 등록</button>
+            </form>
+        </div>
+        <div class="commentbox">
+            <iframe width="1130" height=100% src="movieComment.html" frameborder="0" padding="0" marginwidth="0" marginheight="0"></iframe>
+
+        </div>
+    </div>
 </body>
 </html>
